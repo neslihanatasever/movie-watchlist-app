@@ -1,11 +1,20 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import AddMovie from "./features/addMovie";
+import WatchListMovies from "./features/watchListMovies";
+import WatchedMovies from "./features/watchedMovies";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+
 
 function App() {
   return (
-    <div className="App">
-      <h2>Movie Watchlist App</h2>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<WatchListMovies/>} />
+        <Route path="/watched" element={<WatchedMovies/>} />
+        <Route path="/add" element={<AddMovie/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
